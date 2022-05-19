@@ -7,7 +7,9 @@ const countriesSlice = createSlice({
         search: "",
         region: "",
         countries: [],
-        filterCountries: ""
+        filterCountries: "",
+        country: null,
+        neighbors: []
     },
     reducers: {
         setTheme(state, {payload}) {
@@ -25,9 +27,15 @@ const countriesSlice = createSlice({
         },
         setFilterCountries(state, {payload}) {
             state.filterCountries = payload.data;
+        },
+        setCountry(state, {payload}) {
+            state.country = payload.data;
+        },
+        setNeighbors(state, {payload}) {
+            state.neighbors = payload.data;
         }
     }
 });
 
-export const {setTheme, setSearch, setRegion, setCountries, setFilterCountries} = countriesSlice.actions;
+export const {setTheme, setSearch, setRegion, setCountries, setFilterCountries, setCountry, setNeighbors} = countriesSlice.actions;
 export default countriesSlice.reducer;

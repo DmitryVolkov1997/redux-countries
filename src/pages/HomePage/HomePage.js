@@ -37,7 +37,6 @@ const HomePage = ({countries, setCountries}) => {
         handleSearch();
     }, [countries]);
 
-
     return (
       <>
           <Controls onSearch={handleSearch}/>
